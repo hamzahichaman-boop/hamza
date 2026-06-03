@@ -1,24 +1,31 @@
 # hamza
 
-## Cursor MCP (Context7 + Exa)
+## Cursor — Context7 و Exa (جاهز)
 
-Project MCP config: [`.cursor/mcp.json`](.cursor/mcp.json)
+تم تثبيت خادمي MCP في المشروع. **لا تحتاج مفتاح API للبدء** (الخطة المجانية).
 
-1. Replace the placeholder API keys in `.cursor/mcp.json`:
-   - `YOUR_CONTEXT7_API_KEY` — get one at [context7.com/dashboard](https://context7.com/dashboard)
-   - `YOUR_EXA_API_KEY` — get one at [dashboard.exa.ai/api-keys](https://dashboard.exa.ai/api-keys)
-2. Restart Cursor (or reload MCP servers in **Settings → Cursor Settings → MCP**).
+| الخادم | الوظيفة |
+|--------|---------|
+| **context7** | توثيق المكتبات محدّث |
+| **exa** | بحث على الويب |
 
-For all projects, copy the same `mcpServers` block into `~/.cursor/mcp.json` on your machine.
+### على جهازك
 
-Optional: use env vars instead of pasting keys in JSON:
+1. اسحب المشروع أو افتحه في Cursor.
+2. الملف `.cursor/mcp.json` يُحمَّل تلقائياً مع المشروع.
+3. أعد تشغيل Cursor إن لم يظهر الخادمان في **Settings → MCP**.
 
-```json
-"CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+### تثبيت عالمي (كل المشاريع)
+
+```bash
+bash scripts/setup-cursor-mcp.sh
 ```
 
-```json
-"x-api-key": "${env:EXA_API_KEY}"
-```
+ينسخ الإعداد إلى `~/.cursor/mcp.json`.
 
-Then set those variables in your shell profile before launching Cursor.
+### مفاتيح API (اختياري — حدود أعلى)
+
+انسخ `.cursor/mcp.with-api-keys.json.example` إلى `.cursor/mcp.json` وضع مفاتيحك:
+
+- Context7: https://context7.com/dashboard  
+- Exa: https://dashboard.exa.ai/api-keys  
