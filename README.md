@@ -9,19 +9,37 @@
 | **context7** | توثيق المكتبات محدّث |
 | **exa** | بحث على الويب |
 
-### على جهازك
+### Windows — خطوة بخطوة
 
-1. اسحب المشروع أو افتحه في Cursor.
-2. الملف `.cursor/mcp.json` يُحمَّل تلقائياً مع المشروع.
-3. أعد تشغيل Cursor إن لم يظهر الخادمان في **Settings → MCP**.
+1. **حمّل المشروع** من GitHub (Merge PR أو Clone)، ثم في Cursor: **File → Open Folder** واختر مجلد `hamza`.
+2. **تثبيت عالمي (موصى به على Windows)** — افتح **PowerShell** داخل مجلد المشروع وشغّل:
 
-### تثبيت عالمي (كل المشاريع)
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\setup-cursor-mcp.ps1
+```
+
+ينسخ الإعداد إلى: `C:\Users\اسمك\.cursor\mcp.json`
+
+3. **أغلق Cursor بالكامل** (من شريط المهام: Quit، وليس إغلاق النافذة فقط).
+4. افتح Cursor من جديد.
+5. **تحقق:** `Ctrl + ,` → ابحث عن **MCP** → يجب أن ترى `context7` و `exa` متصلين.
+
+**بدون سكربت:** انسخ يدوياً ملف `.cursor\mcp.json` من المشروع إلى:
+
+`C:\Users\<اسم_المستخدم>\.cursor\mcp.json`
+
+(أنشئ مجلد `.cursor` إن لم يكن موجوداً.)
+
+### Mac / Linux
+
+1. افتح مجلد المشروع في Cursor.
+2. اختياري — تثبيت عالمي:
 
 ```bash
 bash scripts/setup-cursor-mcp.sh
 ```
 
-ينسخ الإعداد إلى `~/.cursor/mcp.json`.
+3. أعد تشغيل Cursor وتحقق من **Settings → MCP**.
 
 ### مفاتيح API (اختياري — حدود أعلى)
 
